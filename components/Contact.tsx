@@ -3,8 +3,41 @@
 import { useState } from "react";
 import Reveal from "./Reveal";
 
+type Status = "idle" | "loading" | "sent" | "error";
+
 export default function Contact() {
-  const [sent, setSent] = useState(false);
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
+  const [error, setError] = useState("");
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (status === "loading" || status === "sent") return;
+
+    setStatus("loading");
+    setError("");
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Something went wrong.");
+        setStatus("error");
+        return;
+      }
+
+      setStatus("sent");
+      setEmail("");
+    } catch {
+      setError("Network error. Please try again.");
+      setStatus("error");
+    }
+  }
 
   return (
     <section className="section contact" id="contact">
@@ -19,19 +52,36 @@ export default function Contact() {
             ALPHA turns material uncertainty into a ranked plan for what to learn next.
             We&apos;d value your feedback — and conversations about data partnership.
           </p>
-          <form
-            className="contact__form"
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSent(true);
-            }}
-            noValidate
-          >
-            <input type="email" placeholder="you@organization.com" aria-label="Email" required />
-            <button type="submit" className="btn btn--solid">
-              {sent ? "Thank you" : "Share feedback"}
+          <form className="contact__form" onSubmit={handleSubmit} noValidate>
+            <input
+              type="email"
+              placeholder="you@organization.com"
+              aria-label="Email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                if (status === "error") setStatus("idle");
+              }}
+              disabled={status === "sent"}
+              required
+            />
+            <button
+              type="submit"
+              className="btn btn--solid"
+              disabled={status === "loading" || status === "sent"}
+            >
+              {status === "loading"
+                ? "Sending…"
+                : status === "sent"
+                  ? "Thank you"
+                  : "Share feedback"}
             </button>
           </form>
+          {status === "error" && (
+            <p className="contact__alt" role="alert" style={{ color: "#e5484d" }}>
+              {error}
+            </p>
+          )}
           <p className="contact__alt">Or reach out to discuss a data partnership.</p>
         </Reveal>
       </div>
