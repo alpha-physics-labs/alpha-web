@@ -7,23 +7,23 @@ import Reveal from "./Reveal";
 const STEPS = [
   {
     k: "Ingest",
-    p: "Bring in public material databases, research papers, and structured test references.",
+    p: "Aggregate open material databases, research literature, and experimental references into a unified corpus.",
   },
   {
-    k: "Structure",
-    p: "Convert raw records into clean, comparable material profiles with confidence scores.",
+    k: "Encode",
+    p: "Convert raw records into structured material representations — the state space the network learns over.",
   },
   {
-    k: "Analyze",
-    p: "Apply physics-informed models for properties, performance indicators, and uncertainty.",
+    k: "Constrain",
+    p: "Embed conservation laws and governing PDEs as a physics residual, so predictions stay physically consistent.",
   },
   {
-    k: "Rank",
-    p: "Prioritize candidates by mission-relevant tradeoffs — weight, stiffness, stability, configuration.",
+    k: "Infer",
+    p: "The trained PINN generalizes across composition and configuration — fast surrogates for expensive simulation.",
   },
   {
     k: "Explain",
-    p: "Show why each candidate was recommended and what should be tested next.",
+    p: "Every prediction ships with its drivers, uncertainty, and the experiment that would reduce it most.",
   },
 ];
 
@@ -55,8 +55,8 @@ export default function Workflow() {
     <section className="scrolly" id="workflow">
       <div className="scrolly__intro container">
         <Reveal>
-          <p className="label">02 — How it works</p>
-          <h2 className="h2">From scattered data to a testable shortlist.</h2>
+          <p className="label">02 — The method</p>
+          <h2 className="h2">Where deep learning meets governing equations.</h2>
         </Reveal>
       </div>
 
@@ -97,7 +97,7 @@ export default function Workflow() {
                     <div className="gauge"><div className="gauge__bar" style={{ "--v": "64%" } as React.CSSProperties} /><span>V50 trend</span></div>
                     <div className="gauge"><div className="gauge__bar" style={{ "--v": "52%" } as React.CSSProperties} /><span>Fracture risk</span></div>
                   </div>
-                  <p className="viz__note">Physics-informed indicators tied to measurable variables.</p>
+                  <p className="viz__note">Physics-residual loss ties every prediction to measurable variables.</p>
                 </motion.div>
 
                 {/* 3 — rank */}

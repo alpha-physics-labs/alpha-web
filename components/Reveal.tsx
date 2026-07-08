@@ -5,12 +5,13 @@ import type { ReactNode } from "react";
 
 type Tag = "div" | "li" | "article" | "section" | "ul" | "p" | "header" | "dl";
 
-const EASE = [0.22, 0.61, 0.36, 1] as const;
+// easeOutExpo — a long, soft settle. The curve Apple uses for content reveals.
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 export default function Reveal({
   as = "div",
   delay = 0,
-  y = 26,
+  y = 22,
   className,
   children,
 }: {
@@ -25,10 +26,10 @@ export default function Reveal({
   return (
     <M
       className={className}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "0px 0px -8% 0px" }}
-      transition={{ duration: 0.9, delay, ease: EASE }}
+      initial={{ opacity: 0, y, filter: "blur(6px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, margin: "0px 0px -12% 0px" }}
+      transition={{ duration: 0.8, delay, ease: EASE }}
     >
       {children}
     </M>

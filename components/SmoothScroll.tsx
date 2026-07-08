@@ -9,13 +9,15 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
     <ReactLenis
       root
       options={{
-        duration: 1.15,
-        // gentle exponential ease-out — the Apple-style "glide to a stop"
-        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        // Continuous lerp smoothing — the natural, "weighted glide" feel Apple uses,
+        // instead of a fixed-duration animation that feels detached from the wheel.
+        lerp: 0.1,
         smoothWheel: true,
-        wheelMultiplier: 0.9,
-        touchMultiplier: 1.4,
-        anchors: { offset: -80, duration: 1.2 }, // ease in-page #links, clear the fixed nav
+        wheelMultiplier: 1,
+        touchMultiplier: 1.5,
+        syncTouch: true,
+        // ease in-page #links and land clear of the fixed nav
+        anchors: { offset: -88, duration: 1 },
       }}
     >
       {children}

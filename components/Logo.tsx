@@ -1,31 +1,45 @@
-export default function Logo({ size = 28 }: { size?: number }) {
+export default function Logo({ size = 30 }: { size?: number }) {
+  // Stacked "material layers" mark — matches the ALPHA brand lockup.
   return (
     <svg
-      viewBox="0 0 64 72"
+      viewBox="0 0 64 60"
       width={size}
-      height={(size * 72) / 64}
+      height={(size * 60) / 64}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
+      <defs>
+        <linearGradient id="alpha-top" x1="32" y1="4" x2="32" y2="26" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#0E1A3E" />
+          <stop offset="1" stopColor="#4F8DFF" />
+        </linearGradient>
+      </defs>
+
+      {/* bottom layer — muted outline */}
       <path
-        className="sh-body"
-        d="M32 1.6 60 12v24.5C60 53.4 48.4 64.6 32 70.4 15.6 64.6 4 53.4 4 36.5V12L32 1.6Z"
+        d="M32 34 54 45 32 56 10 45Z"
+        fill="none"
+        stroke="rgba(174,183,198,.55)"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
       />
+      {/* middle layer — accent outline */}
       <path
-        className="sh-stroke"
-        d="M32 1.6 60 12v24.5C60 53.4 48.4 64.6 32 70.4 15.6 64.6 4 53.4 4 36.5V12L32 1.6Z"
+        d="M32 19 54 30 32 41 10 30Z"
+        fill="none"
+        stroke="#4F8DFF"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
       />
-      <path className="sh-a" d="M32 17 45 48H38.4L32 31.6 27.1 44h9.1l2.1 5H18l14-32Z" />
-      <path className="sh-road" d="M16 52 31 45l17 6-17 4-15-3Z" />
-      <g className="sh-dots">
-        <circle cx="14" cy="22" r="1.1" />
-        <circle cx="19" cy="22" r="1.1" />
-        <circle cx="24" cy="22" r="1.1" />
-        <circle cx="14" cy="27" r="1.1" />
-        <circle cx="19" cy="27" r="1.1" />
-        <circle cx="14" cy="32" r="1.1" />
-      </g>
+      {/* top layer — filled gradient */}
+      <path
+        d="M32 4 54 15 32 26 10 15Z"
+        fill="url(#alpha-top)"
+        stroke="#5B95FF"
+        strokeWidth="1"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }

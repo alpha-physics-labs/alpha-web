@@ -29,19 +29,21 @@ export default function Hero() {
         animate="show"
       >
         <motion.p className="eyebrow" variants={item} style={{ marginBottom: 26 }}>
-          Material intelligence platform · MVP
+          Physics-informed material intelligence · Defense R&amp;D
         </motion.p>
 
         <h1 className="hero__title">
-          <motion.span variants={item}>Material intelligence</motion.span>
+          <motion.span variants={item}>Decide what&apos;s worth</motion.span>
           <motion.span variants={item} className="grad">
-            for protective systems.
+            testing next.
           </motion.span>
         </h1>
 
         <motion.p className="hero__sub" variants={item}>
-          ALPHA helps teams discover, compare, and prioritize protective material
-          candidates — before expensive physical testing.
+          ALPHA is a physics-informed platform for protective-material R&amp;D. We turn
+          scattered test data into a ranked experiment queue — screening candidates against
+          hard physical limits, so teams spend their few expensive shots on the tests that
+          actually reduce uncertainty.
         </motion.p>
 
         <motion.div className="hero__cta" variants={item}>
@@ -49,21 +51,10 @@ export default function Hero() {
             See how it works
           </a>
           <a href="#vision" className="btn btn--ghost">
-            Read the product vision
+            Read the thesis
           </a>
         </motion.div>
       </motion.div>
-
-      <motion.a
-        href="#mvp"
-        className="hero__scroll"
-        aria-label="Scroll down"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.9, duration: 0.8 }}
-      >
-        <span />
-      </motion.a>
     </section>
   );
 }

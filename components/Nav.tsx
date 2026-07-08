@@ -24,14 +24,14 @@ export default function Nav() {
         </a>
 
         <nav className="nav__links" aria-label="Primary">
-          <a href="#problem">Problem</a>
-          <a href="#workflow">How it works</a>
-          <a href="#data">Data</a>
+          <a href="#problem">Thesis</a>
+          <a href="#workflow">Method</a>
+          <a href="#vision">Science</a>
           <a href="#roadmap">Roadmap</a>
         </nav>
 
         <a href="#contact" className="btn btn--ghost nav__cta">
-          View the MVP
+          Get in touch
         </a>
       </div>
     </header>

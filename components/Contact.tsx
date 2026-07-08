@@ -44,13 +44,14 @@ export default function Contact() {
       <div className="container">
         <Reveal className="contact__inner">
           <h2 className="contact__title">
-            Spend less time searching.
+            Building the physics-informed
             <br />
-            More time testing the right candidates.
+            layer for material discovery.
           </h2>
           <p className="lead">
-            ALPHA turns material uncertainty into a ranked plan for what to learn next.
-            We&apos;d value your feedback — and conversations about data partnership.
+            We&apos;re talking with investors, research partners, and teams sitting on hard
+            experimental data. If physics-informed AI is your thesis too, we&apos;d like to
+            hear from you.
           </p>
           <form className="contact__form" onSubmit={handleSubmit} noValidate>
             <input
@@ -74,7 +75,7 @@ export default function Contact() {
                 ? "Sending…"
                 : status === "sent"
                   ? "Thank you"
-                  : "Share feedback"}
+                  : "Request access"}
             </button>
           </form>
           {status === "error" && (
@@ -82,7 +83,7 @@ export default function Contact() {
               {error}
             </p>
           )}
-          <p className="contact__alt">Or reach out to discuss a data partnership.</p>
+          <p className="contact__alt">For investment or research partnership, reach out directly.</p>
         </Reveal>
       </div>
     </section>

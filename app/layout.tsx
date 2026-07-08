@@ -4,14 +4,19 @@ import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://alpha.example.com"),
-  title: "ALPHA — Material intelligence for protective systems",
+  title: "ALPHA — Physics-informed neural networks for material discovery",
   description:
-    "ALPHA helps teams discover, compare, and prioritize protective material candidates before expensive physical testing. An early MVP for physics-informed material intelligence and test planning.",
-  icons: { icon: "/logo.png" },
+    "ALPHA is a research venture building physics-informed neural networks (PINNs) that embed the governing equations of the physical world into deep learning — turning sparse, expensive experiments into fast, physically-consistent predictions.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+  },
   openGraph: {
-    title: "ALPHA — Material intelligence for protective systems",
+    title: "ALPHA — Physics-informed neural networks for material discovery",
     description:
-      "Turn scattered material data into ranked, explainable candidates and clearer test plans.",
+      "A research venture pairing deep learning with the laws of physics to discover high-performance materials before the lab.",
     type: "website",
   },
 };

@@ -7,11 +7,11 @@ export function MvpNotice() {
     <section className="notice" id="mvp">
       <div className="container">
         <Reveal className="notice__card">
-          <span className="notice__tag">MVP</span>
+          <span className="notice__tag">Research</span>
           <p>
-            ALPHA is an early MVP and product vision. It helps teams decide what may be
-            worth testing next — it does <strong>not</strong> replace laboratory, NIJ,
-            military, or operational testing, and it is not a certified armor design tool.
+            ALPHA is decision support, not a verdict. Our models help teams decide what is worth
+            testing next — they augment laboratory, military, and operational testing rather than
+            replace it. Physical validation remains the ground truth.
           </p>
         </Reveal>
       </div>
@@ -31,21 +31,22 @@ export function Problem() {
     <section className="section problem" id="problem">
       <div className="container split">
         <Reveal className="split__head">
-          <p className="label">01 — The problem</p>
-          <h2 className="h2">Material selection is still too fragmented.</h2>
+          <p className="label">01 — The thesis</p>
+          <h2 className="h2">Coupons are expensive. Guesses are more expensive.</h2>
         </Reveal>
         <div className="split__body">
           <Reveal>
             <p className="lead">
-              Protective material teams work across papers, databases, simulations, and test
-              reports. The evidence is valuable, but it&apos;s hard to compare. Density,
-              stiffness, toughness, thickness, backing materials, threat conditions, and test
-              outcomes all pull in different directions.
+              A protective-material team has to choose the next handful of coupons to fabricate
+              and shoot. That decision is buried under inconsistent property, process,
+              simulation, and test data — and composition alone can&apos;t tell you how a full
+              stack will actually perform. Every wrong test costs weeks and real money.
             </p>
           </Reveal>
           <Reveal delay={0.08}>
             <p className="lead" style={{ color: "var(--accent)" }}>
-              Before a team can test everything, it needs to know what&apos;s worth testing.
+              Incumbents tell you what to make. ALPHA tells you whether it will work — before
+              you spend on the test.
             </p>
           </Reveal>
           <Reveal as="ul" className="scatter" delay={0.12}>
@@ -61,12 +62,12 @@ export function Problem() {
 
 /* ───────────────────────── CAPABILITIES ───────────────────────── */
 const CAPS = [
-  ["01", "Material profiles", "Clean, comparable records for materials, properties, and known constraints — side by side."],
-  ["02", "Candidate ranking", "Prioritize materials by mission-relevant tradeoffs and available evidence, not a single property."],
-  ["03", "Literature intelligence", "Extract structured material and test signals from public reports and research papers."],
-  ["04", "Physics-informed analysis", "Connect material properties to measurable variables — density, thickness, velocity, energy."],
-  ["05", "Explainable recommendations", "Show why a candidate is promising, what's uncertain, and what test should come next."],
-  ["06", "Test-planning support", "Move from guesswork to clearer experiments — what to test, where uncertainty is highest."],
+  ["01", "PDE-constrained learning", "Governing equations enter the loss function directly, so the model can't learn physically impossible solutions."],
+  ["02", "Data efficiency", "Physics priors do the heavy lifting where labels are scarce — learning from tens of experiments, not millions."],
+  ["03", "Differentiable surrogates", "Fast, end-to-end differentiable models that stand in for expensive simulation and enable inverse design."],
+  ["04", "Uncertainty quantification", "Every prediction carries calibrated confidence, so teams know exactly where the model is guessing."],
+  ["05", "Explainable by construction", "Because outputs are tied to physical variables, recommendations come with reasons, not black-box scores."],
+  ["06", "Cross-domain transfer", "The same physics-informed backbone generalizes across materials, geometries, and operating regimes."],
 ];
 
 export function Capabilities() {
@@ -74,8 +75,8 @@ export function Capabilities() {
     <section className="section caps" id="product">
       <div className="container">
         <Reveal className="split__head">
-          <p className="label">03 — The product</p>
-          <h2 className="h2">A material intelligence layer.</h2>
+          <p className="label">03 — The research</p>
+          <h2 className="h2">A physics-informed learning stack.</h2>
         </Reveal>
         <div className="cards">
           {CAPS.map(([idx, title, body], i) => (
@@ -97,11 +98,13 @@ export function Example() {
     <section className="section example" id="example">
       <div className="container split">
         <Reveal className="split__head">
-          <p className="label">04 — Example output</p>
-          <h2 className="h2">Every recommendation comes with a reason and a next step.</h2>
+          <p className="label">04 — In practice</p>
+          <h2 className="h2">Predictions that come with a reason and a next experiment.</h2>
           <p className="lead">
-            A worked example for a lightweight, high-stiffness, thermally stable requirement
-            in early research. Outputs show confidence, risk, and what to test next.
+            A worked example: our first application domain is protective, high-performance
+            materials. Given a lightweight, high-stiffness, thermally stable requirement, the
+            model returns ranked candidates with calibrated confidence, physical risk, and the
+            single most informative test to run next.
           </p>
         </Reveal>
 
@@ -156,7 +159,7 @@ const LAYERS = [
   ["Layer 01", "Public material data", "Composition, density, elastic & bulk modulus, hardness, stability, thermal properties.", false],
   ["Layer 02", "Literature mining", "PDF → extraction → LLM-assisted structuring → human review → structured records.", false],
   ["Layer 03", "Experimental references", "Thickness, layup, projectile, velocity, angle, V50 and backface where available.", false],
-  ["Layer 04 · future", "Secure partner data", "Designed so mission-partner test data can later integrate as a secure layer.", true],
+  ["Layer 04 · flywheel", "Secure partner data", "Mission-partner test data integrates as a secure fine-tuning layer — the proprietary moat.", true],
 ] as const;
 
 export function DataStrategy() {
@@ -165,13 +168,14 @@ export function DataStrategy() {
       <div className="container">
         <Reveal className="split__head">
           <p className="label">05 — Data strategy</p>
-          <h2 className="h2">Built around a multi-source data foundation.</h2>
+          <h2 className="h2">A compounding, multi-source training substrate.</h2>
         </Reveal>
         <Reveal>
           <p className="lead lead--wide">
-            ALPHA starts with open material data and public literature to prove the workflow.
-            Over time, the same architecture lets trusted partner test data plug in as a secure
-            validation and fine-tuning layer.
+            ALPHA bootstraps on open material data and public literature to pre-train the
+            physics-informed backbone. The same architecture then lets trusted partner test
+            data plug in as a secure fine-tuning layer — a proprietary data flywheel that
+            compounds with every experiment.
             <span className="lead-hint"> Drag the layers around — they snap back into place.</span>
           </p>
         </Reveal>
@@ -193,10 +197,10 @@ export function DataStrategy() {
 
 /* ───────────────────────── TECHNICAL FOUNDATION ───────────────────────── */
 const CONCEPTS = [
-  ["V50 / ballistic limit", "Where data exists, ALPHA uses V50-style indicators to compare performance trends across materials and configurations."],
-  ["Backface signature", "When test data supports it, deformation-related indicators are included in candidate evaluation."],
-  ["Threat conditions", "A material is only meaningful against a defined threat — projectile type, mass, velocity, impact angle."],
-  ["Configuration matters", "Strike face, backing, layers, thickness, areal density, weave. ALPHA evaluates materials in context."],
+  ["Governing equations", "Momentum, energy, and mass conservation enter the network as soft constraints — the physics residual."],
+  ["Physics-residual loss", "Training minimizes data error and equation error together, so the model fits reality and respects the laws."],
+  ["Uncertainty quantification", "The network reports calibrated confidence, separating what it has learned from what it is extrapolating."],
+  ["Configuration in context", "Strike face, backing, layers, thickness, areal density, threat. Materials are only meaningful in a full configuration."],
 ];
 
 export function TechFoundation() {
@@ -204,8 +208,8 @@ export function TechFoundation() {
     <section className="section tech" id="vision">
       <div className="container split">
         <Reveal className="split__head">
-          <p className="label">06 — Technical foundation</p>
-          <h2 className="h2">Data-driven models, held to physical constraints.</h2>
+          <p className="label">06 — The science</p>
+          <h2 className="h2">Data-driven models, held to physical law.</h2>
         </Reveal>
         <div className="split__body">
           <dl className="concepts">
@@ -236,9 +240,9 @@ export function TechFoundation() {
 
 /* ───────────────────────── ROADMAP ───────────────────────── */
 const PHASES: { title: string; now?: boolean; items: string[] }[] = [
-  { title: "Now", now: true, items: ["MVP product & vision", "Material comparison concept", "Candidate ranking examples", "Data strategy", "Demo workflow"] },
-  { title: "Next", items: ["Materials Project ingestion", "Literature extraction pipeline", "Structured material / test database", "Better candidate scoring", "Explanation cards"] },
-  { title: "Later", items: ["V50 / performance modeling", "Uncertainty estimation", "Partner data integration", "Secure deployment", "Validation with domain experts"] },
+  { title: "Now", now: true, items: ["Research thesis & vision", "PINN architecture prototype", "Physics-residual training loop", "Data strategy", "Worked demonstrations"] },
+  { title: "Next", items: ["Materials Project ingestion", "Literature extraction pipeline", "Structured material / test database", "Differentiable surrogate models", "Calibrated uncertainty"] },
+  { title: "Later", items: ["Inverse design & optimization", "Partner data flywheel", "Secure deployment", "Peer-reviewed validation", "Expansion beyond materials"] },
 ];
 
 export function Roadmap() {
@@ -273,13 +277,14 @@ export function Footer() {
       <div className="container footer__inner">
         <div className="footer__brand">
           <span className="brand__word">ALPHA</span>
-          <p>Material intelligence for protective systems.</p>
+          <p>Physics-informed neural networks for material discovery.</p>
         </div>
         <p className="footer__disc">
-          ALPHA supports early-stage analysis and test planning. Final performance must be
-          validated through appropriate standards, laboratory testing, and expert review.
+          ALPHA is an early-stage research venture. Model outputs support analysis and
+          experiment planning; final performance must be validated through appropriate
+          standards, laboratory testing, and expert review.
         </p>
-        <p className="footer__copy">© 2026 ALPHA · DIU project</p>
+        <p className="footer__copy">© 2026 ALPHA · Research venture</p>
       </div>
     </footer>
   );
