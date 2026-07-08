@@ -7,12 +7,6 @@ export const metadata: Metadata = {
   title: "ALPHA — Physics-informed neural networks for material discovery",
   description:
     "ALPHA is a research venture building physics-informed neural networks (PINNs) that embed the governing equations of the physical world into deep learning — turning sparse, expensive experiments into fast, physically-consistent predictions.",
-  icons: {
-    icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/icon.png", type: "image/png" },
-    ],
-  },
   openGraph: {
     title: "ALPHA — Physics-informed neural networks for material discovery",
     description:
