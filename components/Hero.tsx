@@ -45,11 +45,16 @@ export default function Hero() {
         </motion.p>
 
         <motion.div className="hero__cta" variants={item}>
-          <a href="#workflow" className="btn btn--solid">
-            See how it works
+          <a
+            href="https://alpha-physics-labs.github.io/demo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn--solid"
+          >
+            See the live demo
           </a>
-          <a href="#vision" className="btn btn--ghost">
-            See the science
+          <a href="#workflow" className="btn btn--ghost">
+            See how it works
           </a>
         </motion.div>
       </motion.div>

@@ -30,8 +30,13 @@ export default function Nav() {
           <a href="#roadmap">Roadmap</a>
         </nav>
 
-        <a href="#contact" className="btn btn--ghost nav__cta">
-          Get in touch
+        <a
+          href="https://alpha-physics-labs.github.io/demo/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn--solid nav__cta"
+        >
+          See the demo
         </a>
       </div>
     </header>

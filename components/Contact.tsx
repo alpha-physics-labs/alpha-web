@@ -49,10 +49,20 @@ export default function Contact() {
             layer for material discovery.
           </h2>
           <p className="lead">
-            We are talking with investors, research partners, and teams sitting on hard
-            experimental data. If physics grounded AI is your thesis too, we would like to hear
-            from you.
+            See the model at work, then reach out. We are talking with investors, research
+            partners, and teams sitting on hard experimental data. If physics grounded AI is your
+            thesis too, we would like to hear from you.
           </p>
+          <div className="contact__primary">
+            <a
+              href="https://alpha-physics-labs.github.io/demo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--solid"
+            >
+              See the live demo
+            </a>
+          </div>
           <form className="contact__form" onSubmit={handleSubmit} noValidate>
             <input
               type="email"
@@ -75,7 +85,7 @@ export default function Contact() {
                 ? "Sending…"
                 : status === "sent"
                   ? "Thank you"
-                  : "Request access"}
+                  : "Keep me posted"}
             </button>
           </form>
           {status === "error" && (
