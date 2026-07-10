@@ -20,7 +20,6 @@ export default function Hero() {
   return (
     <section className="hero" id="hero">
       <motion.div className="hero__glow" aria-hidden style={{ y: glowY }} />
-      <div className="hero__grid" aria-hidden />
 
       <motion.div
         className="hero__content"
@@ -29,21 +28,20 @@ export default function Hero() {
         animate="show"
       >
         <motion.p className="eyebrow" variants={item} style={{ marginBottom: 26 }}>
-          Physics-informed material intelligence · Defense R&amp;D
+          Physics grounded material intelligence
         </motion.p>
 
         <h1 className="hero__title">
-          <motion.span variants={item}>Decide what&apos;s worth</motion.span>
+          <motion.span variants={item}>Know what is worth</motion.span>
           <motion.span variants={item} className="grad">
             testing next.
           </motion.span>
         </h1>
 
         <motion.p className="hero__sub" variants={item}>
-          ALPHA is a physics-informed platform for protective-material R&amp;D. We turn
-          scattered test data into a ranked experiment queue — screening candidates against
-          hard physical limits, so teams spend their few expensive shots on the tests that
-          actually reduce uncertainty.
+          ALPHA predicts how a protective material is likely to perform from its chemistry,
+          before anything is fabricated. Teams get a ranked shortlist with honest uncertainty,
+          so they spend their testing on the few candidates that matter most.
         </motion.p>
 
         <motion.div className="hero__cta" variants={item}>
@@ -51,7 +49,7 @@ export default function Hero() {
             See how it works
           </a>
           <a href="#vision" className="btn btn--ghost">
-            Read the thesis
+            See the science
           </a>
         </motion.div>
       </motion.div>

@@ -11,32 +11,32 @@ export default function Logo({ size = 30 }: { size?: number }) {
     >
       <defs>
         <linearGradient id="alpha-top" x1="32" y1="4" x2="32" y2="26" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#0E1A3E" />
-          <stop offset="1" stopColor="#4F8DFF" />
+          <stop stopColor="#22503A" />
+          <stop offset="1" stopColor="#2E6A4C" />
         </linearGradient>
       </defs>
 
-      {/* bottom layer — muted outline */}
+      {/* bottom layer, muted outline */}
       <path
         d="M32 34 54 45 32 56 10 45Z"
         fill="none"
-        stroke="rgba(174,183,198,.55)"
+        stroke="rgba(131,135,124,.55)"
         strokeWidth="1.6"
         strokeLinejoin="round"
       />
-      {/* middle layer — accent outline */}
+      {/* middle layer, accent outline */}
       <path
         d="M32 19 54 30 32 41 10 30Z"
         fill="none"
-        stroke="#4F8DFF"
+        stroke="#2E6A4C"
         strokeWidth="1.6"
         strokeLinejoin="round"
       />
-      {/* top layer — filled gradient */}
+      {/* top layer, filled gradient */}
       <path
         d="M32 4 54 15 32 26 10 15Z"
         fill="url(#alpha-top)"
-        stroke="#5B95FF"
+        stroke="#3A8060"
         strokeWidth="1"
         strokeLinejoin="round"
       />

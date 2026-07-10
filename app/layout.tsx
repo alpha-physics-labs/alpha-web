@@ -4,13 +4,13 @@ import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://alpha.example.com"),
-  title: "ALPHA — Physics-informed neural networks for material discovery",
+  title: "ALPHA · Physics grounded material intelligence",
   description:
-    "ALPHA is a research venture building physics-informed neural networks (PINNs) that embed the governing equations of the physical world into deep learning — turning sparse, expensive experiments into fast, physically-consistent predictions.",
+    "ALPHA screens candidate protective materials from their chemistry, so teams spend their testing on the few best options instead of dozens. Every prediction carries its own uncertainty and a clear evidence level.",
   openGraph: {
-    title: "ALPHA — Physics-informed neural networks for material discovery",
+    title: "ALPHA · Physics grounded material intelligence",
     description:
-      "A research venture pairing deep learning with the laws of physics to discover high-performance materials before the lab.",
+      "Predict how a material is likely to perform before anything is fabricated, and know exactly how far each prediction has been proven.",
     type: "website",
   },
 };
@@ -28,12 +28,11 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&family=Hanken+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
       </head>
       <body>
-        <div className="grain" aria-hidden="true" />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

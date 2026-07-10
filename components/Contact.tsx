@@ -44,14 +44,14 @@ export default function Contact() {
       <div className="container">
         <Reveal className="contact__inner">
           <h2 className="contact__title">
-            Building the physics-informed
+            Building the physics grounded
             <br />
             layer for material discovery.
           </h2>
           <p className="lead">
-            We&apos;re talking with investors, research partners, and teams sitting on hard
-            experimental data. If physics-informed AI is your thesis too, we&apos;d like to
-            hear from you.
+            We are talking with investors, research partners, and teams sitting on hard
+            experimental data. If physics grounded AI is your thesis too, we would like to hear
+            from you.
           </p>
           <form className="contact__form" onSubmit={handleSubmit} noValidate>
             <input

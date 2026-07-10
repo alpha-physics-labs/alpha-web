@@ -11,15 +11,15 @@ const STEPS = [
   },
   {
     k: "Encode",
-    p: "Convert raw records into structured material representations — the state space the network learns over.",
+    p: "Turn raw records into structured material profiles, the state space the network learns over.",
   },
   {
     k: "Constrain",
-    p: "Embed conservation laws and governing PDEs as a physics residual, so predictions stay physically consistent.",
+    p: "Embed conservation laws and governing equations as a physics residual, so predictions stay physically consistent.",
   },
   {
     k: "Infer",
-    p: "The trained PINN generalizes across composition and configuration — fast surrogates for expensive simulation.",
+    p: "The trained model carries across composition and configuration, standing in for expensive simulation.",
   },
   {
     k: "Explain",
@@ -55,7 +55,7 @@ export default function Workflow() {
     <section className="scrolly" id="workflow">
       <div className="scrolly__intro container">
         <Reveal>
-          <p className="label">02 — The method</p>
+          <p className="label">02 · The method</p>
           <h2 className="h2">Where deep learning meets governing equations.</h2>
         </Reveal>
       </div>
@@ -66,7 +66,7 @@ export default function Workflow() {
             {/* visual */}
             <div className="stage__visual">
               <div className="viz">
-                {/* 0 — ingest */}
+                {/* 0 · ingest */}
                 <motion.div className="viz__layer" {...layerAnim(step === 0)}>
                   <div className="viz__nodes">
                     <span className="node">Materials Project</span>
@@ -77,7 +77,7 @@ export default function Workflow() {
                   <div className="viz__funnel" />
                 </motion.div>
 
-                {/* 1 — structure */}
+                {/* 1 · structure */}
                 <motion.div className="viz__layer" {...layerAnim(step === 1)}>
                   <div className="profile">
                     <div className="profile__row"><span>Material</span><b>Silicon carbide composite</b></div>
@@ -89,7 +89,7 @@ export default function Workflow() {
                   </div>
                 </motion.div>
 
-                {/* 2 — analyze */}
+                {/* 2 · analyze */}
                 <motion.div className="viz__layer" {...layerAnim(step === 2)}>
                   <div className="gauges">
                     <div className="gauge"><div className="gauge__bar" style={{ "--v": "78%" } as React.CSSProperties} /><span>Areal density</span></div>
@@ -97,10 +97,10 @@ export default function Workflow() {
                     <div className="gauge"><div className="gauge__bar" style={{ "--v": "64%" } as React.CSSProperties} /><span>V50 trend</span></div>
                     <div className="gauge"><div className="gauge__bar" style={{ "--v": "52%" } as React.CSSProperties} /><span>Fracture risk</span></div>
                   </div>
-                  <p className="viz__note">Physics-residual loss ties every prediction to measurable variables.</p>
+                  <p className="viz__note">A physics residual ties every prediction to variables you can measure.</p>
                 </motion.div>
 
-                {/* 3 — rank */}
+                {/* 3 · rank */}
                 <motion.div className="viz__layer" {...layerAnim(step === 3)}>
                   <ol className="rank">
                     <li><span className="rank__n">1</span><span className="rank__name">SiC composite</span><span className="rank__bar" style={{ "--v": "92%" } as React.CSSProperties} /></li>
@@ -109,7 +109,7 @@ export default function Workflow() {
                   </ol>
                 </motion.div>
 
-                {/* 4 — explain */}
+                {/* 4 · explain */}
                 <motion.div className="viz__layer" {...layerAnim(step === 4)}>
                   <div className="explain">
                     <p className="explain__why"><b>Why it scored well</b>low density, high hardness, strong stiffness profile.</p>

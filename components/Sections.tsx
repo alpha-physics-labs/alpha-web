@@ -10,8 +10,8 @@ export function MvpNotice() {
           <span className="notice__tag">Research</span>
           <p>
             ALPHA is decision support, not a verdict. Our models help teams decide what is worth
-            testing next — they augment laboratory, military, and operational testing rather than
-            replace it. Physical validation remains the ground truth.
+            testing next. They support laboratory, military, and operational testing rather than
+            replace it. Physical testing stays the ground truth.
           </p>
         </Reveal>
       </div>
@@ -31,21 +31,21 @@ export function Problem() {
     <section className="section problem" id="problem">
       <div className="container split">
         <Reveal className="split__head">
-          <p className="label">01 — The thesis</p>
+          <p className="label">01 · The thesis</p>
           <h2 className="h2">Coupons are expensive. Guesses are more expensive.</h2>
         </Reveal>
         <div className="split__body">
           <Reveal>
             <p className="lead">
-              A protective-material team has to choose the next handful of coupons to fabricate
-              and shoot. That decision is buried under inconsistent property, process,
-              simulation, and test data — and composition alone can&apos;t tell you how a full
-              stack will actually perform. Every wrong test costs weeks and real money.
+              A protective material team has to choose the next handful of coupons to fabricate
+              and shoot. That decision sits buried under inconsistent property, process,
+              simulation, and test data, and chemistry alone cannot tell you how a full stack
+              will actually perform. Every wrong test costs weeks and real money.
             </p>
           </Reveal>
           <Reveal delay={0.08}>
             <p className="lead" style={{ color: "var(--accent)" }}>
-              Incumbents tell you what to make. ALPHA tells you whether it will work — before
+              Others tell you what to make. ALPHA tells you whether it is likely to work, before
               you spend on the test.
             </p>
           </Reveal>
@@ -62,12 +62,12 @@ export function Problem() {
 
 /* ───────────────────────── CAPABILITIES ───────────────────────── */
 const CAPS = [
-  ["01", "PDE-constrained learning", "Governing equations enter the loss function directly, so the model can't learn physically impossible solutions."],
-  ["02", "Data efficiency", "Physics priors do the heavy lifting where labels are scarce — learning from tens of experiments, not millions."],
-  ["03", "Differentiable surrogates", "Fast, end-to-end differentiable models that stand in for expensive simulation and enable inverse design."],
-  ["04", "Uncertainty quantification", "Every prediction carries calibrated confidence, so teams know exactly where the model is guessing."],
-  ["05", "Explainable by construction", "Because outputs are tied to physical variables, recommendations come with reasons, not black-box scores."],
-  ["06", "Cross-domain transfer", "The same physics-informed backbone generalizes across materials, geometries, and operating regimes."],
+  ["01", "Physics constrained learning", "Governing equations enter the loss function directly, so the model cannot learn solutions the physics forbids."],
+  ["02", "Data efficiency", "Physics priors do the heavy lifting where measured data is scarce, learning from tens of experiments rather than millions."],
+  ["03", "Fast surrogates", "Quick, fully differentiable models that stand in for expensive simulation and open the door to inverse design."],
+  ["04", "Honest uncertainty", "Every prediction carries a calibrated confidence, so teams know exactly where the model is guessing."],
+  ["05", "Explainable by design", "Because outputs tie back to physical variables, every recommendation comes with a reason rather than a black box score."],
+  ["06", "Transfer across domains", "The same physics grounded backbone carries across materials, geometries, and operating regimes."],
 ];
 
 export function Capabilities() {
@@ -75,8 +75,8 @@ export function Capabilities() {
     <section className="section caps" id="product">
       <div className="container">
         <Reveal className="split__head">
-          <p className="label">03 — The research</p>
-          <h2 className="h2">A physics-informed learning stack.</h2>
+          <p className="label">03 · The research</p>
+          <h2 className="h2">A physics grounded learning stack.</h2>
         </Reveal>
         <div className="cards">
           {CAPS.map(([idx, title, body], i) => (
@@ -98,13 +98,13 @@ export function Example() {
     <section className="section example" id="example">
       <div className="container split">
         <Reveal className="split__head">
-          <p className="label">04 — In practice</p>
+          <p className="label">04 · In practice</p>
           <h2 className="h2">Predictions that come with a reason and a next experiment.</h2>
           <p className="lead">
-            A worked example: our first application domain is protective, high-performance
-            materials. Given a lightweight, high-stiffness, thermally stable requirement, the
-            model returns ranked candidates with calibrated confidence, physical risk, and the
-            single most informative test to run next.
+            A worked example. Our first area is protective, high performance materials. Given a
+            light, stiff, thermally stable requirement, the model returns ranked candidates with
+            a calibrated confidence, the physical risk, and the single most useful test to run
+            next.
           </p>
         </Reveal>
 
@@ -119,23 +119,23 @@ export function Example() {
               <li>Low density</li><li>High hardness</li><li>Strong stiffness profile</li>
             </ul>
             <ul className="cand__list cand__list--risk">
-              <li>Brittle fracture behavior</li><li>Manufacturing cost</li><li>Configuration-specific validation</li>
+              <li>Brittle fracture behavior</li><li>Manufacturing cost</li><li>Configuration specific validation</li>
             </ul>
             <p className="cand__next">
-              Next test — compare against alumina ceramic and UHMWPE-backed configurations
-              under controlled conditions.
+              Next test. Compare against alumina ceramic and UHMWPE backed configurations under
+              controlled conditions.
             </p>
           </Reveal>
 
           <Reveal as="article" className="cand" delay={0.08}>
             <header>
               <span className="cand__rank">Candidate 2</span>
-              <span className="cand__score score--mid">Medium-high</span>
+              <span className="cand__score score--mid">Strong</span>
             </header>
             <h3>Alumina ceramic</h3>
             <ul className="cand__list cand__list--why"><li>Mature, available data</li><li>Known protective use</li></ul>
             <ul className="cand__list cand__list--risk"><li>Heavier than alternatives</li></ul>
-            <p className="cand__next">Next test — compare areal density and backing configuration.</p>
+            <p className="cand__next">Next test. Compare areal density and backing configuration.</p>
           </Reveal>
 
           <Reveal as="article" className="cand" delay={0.14}>
@@ -145,8 +145,8 @@ export function Example() {
             </header>
             <h3>UHMWPE laminate</h3>
             <ul className="cand__list cand__list--why"><li>Low weight</li><li>Strong fiber performance</li></ul>
-            <ul className="cand__list cand__list--risk"><li>Threat- and temperature-dependent</li></ul>
-            <p className="cand__next">Next test — validate performance envelope under the selected threat scenario.</p>
+            <ul className="cand__list cand__list--risk"><li>Sensitive to threat and temperature</li></ul>
+            <p className="cand__next">Next test. Validate the performance envelope under the selected threat scenario.</p>
           </Reveal>
         </div>
       </div>
@@ -156,10 +156,10 @@ export function Example() {
 
 /* ───────────────────────── DATA STRATEGY ───────────────────────── */
 const LAYERS = [
-  ["Layer 01", "Public material data", "Composition, density, elastic & bulk modulus, hardness, stability, thermal properties.", false],
-  ["Layer 02", "Literature mining", "PDF → extraction → LLM-assisted structuring → human review → structured records.", false],
+  ["Layer 01", "Public material data", "Composition, density, elastic and bulk modulus, hardness, stability, and thermal properties.", false],
+  ["Layer 02", "Literature mining", "Papers become structured records through extraction, model assisted structuring, and human review.", false],
   ["Layer 03", "Experimental references", "Thickness, layup, projectile, velocity, angle, V50 and backface where available.", false],
-  ["Layer 04 · flywheel", "Secure partner data", "Mission-partner test data integrates as a secure fine-tuning layer — the proprietary moat.", true],
+  ["Layer 04 · flywheel", "Secure partner data", "Partner test data plugs in as a secure tuning layer that stays in place. This is the moat.", true],
 ] as const;
 
 export function DataStrategy() {
@@ -167,16 +167,16 @@ export function DataStrategy() {
     <section className="section data" id="data">
       <div className="container">
         <Reveal className="split__head">
-          <p className="label">05 — Data strategy</p>
-          <h2 className="h2">A compounding, multi-source training substrate.</h2>
+          <p className="label">05 · Data strategy</p>
+          <h2 className="h2">A training base that compounds from many sources.</h2>
         </Reveal>
         <Reveal>
           <p className="lead lead--wide">
-            ALPHA bootstraps on open material data and public literature to pre-train the
-            physics-informed backbone. The same architecture then lets trusted partner test
-            data plug in as a secure fine-tuning layer — a proprietary data flywheel that
-            compounds with every experiment.
-            <span className="lead-hint"> Drag the layers around — they snap back into place.</span>
+            ALPHA starts on open material data and public literature to train the physics
+            grounded backbone. The same design then lets trusted partner test data plug in as a
+            secure tuning layer, a private data flywheel that grows stronger with every
+            experiment.
+            <span className="lead-hint"> Drag the layers around. They snap back into place.</span>
           </p>
         </Reveal>
         <div className="layers">
@@ -197,10 +197,10 @@ export function DataStrategy() {
 
 /* ───────────────────────── TECHNICAL FOUNDATION ───────────────────────── */
 const CONCEPTS = [
-  ["Governing equations", "Momentum, energy, and mass conservation enter the network as soft constraints — the physics residual."],
-  ["Physics-residual loss", "Training minimizes data error and equation error together, so the model fits reality and respects the laws."],
-  ["Uncertainty quantification", "The network reports calibrated confidence, separating what it has learned from what it is extrapolating."],
-  ["Configuration in context", "Strike face, backing, layers, thickness, areal density, threat. Materials are only meaningful in a full configuration."],
+  ["Governing equations", "Momentum, energy, and mass conservation enter the network as soft constraints, the physics residual."],
+  ["Physics residual loss", "Training lowers data error and equation error together, so the model fits reality and respects the laws."],
+  ["Honest uncertainty", "The network reports a calibrated confidence, separating what it has learned from what it is reaching for."],
+  ["Configuration in context", "Strike face, backing, layers, thickness, areal density, threat. A material only means something inside a full configuration."],
 ];
 
 export function TechFoundation() {
@@ -208,8 +208,8 @@ export function TechFoundation() {
     <section className="section tech" id="vision">
       <div className="container split">
         <Reveal className="split__head">
-          <p className="label">06 — The science</p>
-          <h2 className="h2">Data-driven models, held to physical law.</h2>
+          <p className="label">06 · The science</p>
+          <h2 className="h2">Data driven models, held to physical law.</h2>
         </Reveal>
         <div className="split__body">
           <dl className="concepts">
@@ -240,9 +240,9 @@ export function TechFoundation() {
 
 /* ───────────────────────── ROADMAP ───────────────────────── */
 const PHASES: { title: string; now?: boolean; items: string[] }[] = [
-  { title: "Now", now: true, items: ["Research thesis & vision", "PINN architecture prototype", "Physics-residual training loop", "Data strategy", "Worked demonstrations"] },
-  { title: "Next", items: ["Materials Project ingestion", "Literature extraction pipeline", "Structured material / test database", "Differentiable surrogate models", "Calibrated uncertainty"] },
-  { title: "Later", items: ["Inverse design & optimization", "Partner data flywheel", "Secure deployment", "Peer-reviewed validation", "Expansion beyond materials"] },
+  { title: "Now", now: true, items: ["First working model on public data", "Predicts shear modulus from chemistry", "Held out accuracy of R² 0.84", "Honest evidence labels on every result", "Data pipeline with full provenance"] },
+  { title: "Next", items: ["Physics layer with known scaling laws", "Materials Project ingestion", "Literature extraction pipeline", "Calibrated uncertainty on each call", "Out of domain warnings"] },
+  { title: "Later", items: ["Ballistic prediction with a partner", "Validation inside partner environments", "Predict, test, then confirm", "Secure deployment", "Peer reviewed validation"] },
 ];
 
 export function Roadmap() {
@@ -250,7 +250,7 @@ export function Roadmap() {
     <section className="section roadmap" id="roadmap">
       <div className="container">
         <Reveal className="split__head">
-          <p className="label">07 — Roadmap</p>
+          <p className="label">07 · Roadmap</p>
           <h2 className="h2">Honest about where it is, and where it&apos;s going.</h2>
         </Reveal>
         <div className="phases">
@@ -277,12 +277,12 @@ export function Footer() {
       <div className="container footer__inner">
         <div className="footer__brand">
           <span className="brand__word">ALPHA</span>
-          <p>Physics-informed neural networks for material discovery.</p>
+          <p>Physics grounded material intelligence.</p>
         </div>
         <p className="footer__disc">
-          ALPHA is an early-stage research venture. Model outputs support analysis and
-          experiment planning; final performance must be validated through appropriate
-          standards, laboratory testing, and expert review.
+          ALPHA is an early stage research venture. Model outputs support analysis and
+          experiment planning. Final performance must be confirmed through the right standards,
+          laboratory testing, and expert review.
         </p>
         <p className="footer__copy">© 2026 ALPHA · Research venture</p>
       </div>
