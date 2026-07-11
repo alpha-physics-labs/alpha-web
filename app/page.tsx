@@ -1,11 +1,10 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Workflow from "@/components/Workflow";
 import Contact from "@/components/Contact";
+import { MethodMac, Research, PipelineTerminal } from "@/components/Showcase";
 import {
   MvpNotice,
   Problem,
-  Capabilities,
   Example,
   DataStrategy,
   TechFoundation,
@@ -21,8 +20,9 @@ export default function Home() {
         <Hero />
         <MvpNotice />
         <Problem />
-        <Workflow />
-        <Capabilities />
+        <MethodMac />
+        <Research />
+        <PipelineTerminal />
         <Example />
         <DataStrategy />
         <TechFoundation />
