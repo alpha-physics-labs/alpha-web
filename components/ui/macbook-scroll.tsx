@@ -53,19 +53,17 @@ export const MacbookScroll = ({
 
   const scaleX = useTransform(scrollYProgress, [0, 0.3], [1.2, isMobile ? 1 : 1.5]);
   const scaleY = useTransform(scrollYProgress, [0, 0.3], [0.6, isMobile ? 1 : 1.5]);
-  const translate = useTransform(scrollYProgress, [0, 1], [0, 1500]);
+  const translate = useTransform(scrollYProgress, [0, 1], [0, 0]);
   const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
   const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
-    <div
-      ref={ref}
-      className="flex min-h-[200vh] shrink-0 scale-[0.35] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-50 md:scale-110 md:py-80 lg:scale-125"
-    >
+    <div ref={ref} className="relative min-h-[240vh] w-full">
+      <div className="sticky top-0 flex h-screen shrink-0 scale-[0.4] transform flex-col items-center justify-center overflow-hidden [perspective:800px] sm:scale-50 md:scale-95 lg:scale-100">
       <motion.h2
         style={{ translateY: textTransform, opacity: textOpacity, fontFamily: "var(--font-display)" }}
-        className="mb-20 max-w-2xl px-6 text-center text-4xl font-medium text-white md:text-6xl"
+        className="mb-16 max-w-2xl px-6 text-center text-4xl font-medium text-white md:text-6xl"
       >
         {title || (
           <span>
@@ -95,6 +93,7 @@ export const MacbookScroll = ({
           <div className="absolute inset-x-0 bottom-0 z-50 h-40 w-full bg-gradient-to-t from-[#0A0E17] via-[#0A0E17] to-transparent"></div>
         )}
         {badge && <div className="absolute bottom-4 left-4">{badge}</div>}
+      </div>
       </div>
     </div>
   );

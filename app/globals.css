@@ -255,7 +255,7 @@ img,svg{ display:block; }
 @keyframes tblink{ 50%{ opacity:0; } }
 
 /* ============================================================ METHOD SCREEN (inside macbook) */
-.method{ overflow:hidden; }   /* clip the screen so it never bleeds into the next section */
+.method{ position:relative; z-index:2; }
 .method-screen{ position:absolute; inset:0; background:radial-gradient(125% 90% at 50% -12%, #14224a, #0a1224 52%, #070c17); display:flex; flex-direction:column; font-family:var(--font-body); overflow:hidden; }
 .method-screen__bar{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding:17px 22px; border-bottom:1px solid rgba(255,255,255,.06); flex:0 0 auto; background:rgba(255,255,255,.02); }
 .method-screen__lights{ display:flex; gap:9px; }
