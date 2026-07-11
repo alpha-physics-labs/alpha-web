@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase";
+import { getSupabaseAdmin } from "@/lib/supabase";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -15,6 +15,14 @@ export async function POST(req: Request) {
     return NextResponse.json(
       { error: "Please enter a valid email." },
       { status: 400 }
+    );
+  }
+
+  const supabaseAdmin = getSupabaseAdmin();
+  if (!supabaseAdmin) {
+    return NextResponse.json(
+      { error: "Signups are not configured yet. Please reach out directly." },
+      { status: 503 }
     );
   }
 
