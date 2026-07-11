@@ -11,8 +11,8 @@ export default function Logo({ size = 30 }: { size?: number }) {
     >
       <defs>
         <linearGradient id="alpha-top" x1="32" y1="4" x2="32" y2="26" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#22503A" />
-          <stop offset="1" stopColor="#2E6A4C" />
+          <stop stopColor="#0E1A3E" />
+          <stop offset="1" stopColor="#4F8DFF" />
         </linearGradient>
       </defs>
 
@@ -20,7 +20,7 @@ export default function Logo({ size = 30 }: { size?: number }) {
       <path
         d="M32 34 54 45 32 56 10 45Z"
         fill="none"
-        stroke="rgba(131,135,124,.55)"
+        stroke="rgba(174,183,198,.55)"
         strokeWidth="1.6"
         strokeLinejoin="round"
       />
@@ -28,7 +28,7 @@ export default function Logo({ size = 30 }: { size?: number }) {
       <path
         d="M32 19 54 30 32 41 10 30Z"
         fill="none"
-        stroke="#2E6A4C"
+        stroke="#4F8DFF"
         strokeWidth="1.6"
         strokeLinejoin="round"
       />
@@ -36,7 +36,7 @@ export default function Logo({ size = 30 }: { size?: number }) {
       <path
         d="M32 4 54 15 32 26 10 15Z"
         fill="url(#alpha-top)"
-        stroke="#3A8060"
+        stroke="#5B95FF"
         strokeWidth="1"
         strokeLinejoin="round"
       />
