@@ -295,6 +295,21 @@ img,svg{ display:block; }
 .research__meta .lead{ margin-top:16px; }
 .research__hint{ font-family:var(--font-mono); font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-mute); display:inline-flex; align-items:center; gap:10px; white-space:nowrap; padding-bottom:8px; }
 .research__hint::before{ content:""; width:28px; height:1px; background:var(--accent); }
+
+/* pinned horizontal research — vertical scroll drives sideways motion, no clicking */
+.hs{ position:relative; }
+.hs__pin{ position:sticky; top:0; height:100vh; display:flex; flex-direction:column; justify-content:center; gap:clamp(20px,3.5vh,40px); overflow:hidden; }
+.hs__head{ display:flex; flex-direction:column; gap:10px; }
+.hs__head .h2{ margin:0; font-size:clamp(26px,3.4vw,40px); }
+.hs__head .lead{ margin:0; }
+.hs__track{ display:flex; gap:clamp(16px,1.6vw,24px); padding-left:clamp(22px,5vw,56px); padding-right:24vw; will-change:transform; }
+.hs-card{ position:relative; flex:0 0 auto; width:clamp(280px,30vw,380px); height:clamp(320px,50vh,480px); border-radius:22px; overflow:hidden; border:1px solid var(--line); background-color:var(--paper-3); background-size:cover; background-position:center; box-shadow:var(--shadow-m); display:flex; flex-direction:column; padding:24px; }
+.hs-card::after{ content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(5,7,13,.94), rgba(5,7,13,.35) 52%, rgba(5,7,13,.12)); }
+.hs-card__n{ position:relative; z-index:1; font-family:var(--font-mono); font-size:13px; letter-spacing:.16em; color:#dbe6ff; opacity:.85; }
+.hs-card__body{ position:relative; z-index:1; margin-top:auto; }
+.hs-card__title{ font-family:var(--font-display); font-weight:450; font-size:clamp(21px,2.1vw,28px); line-height:1.08; letter-spacing:-.01em; color:#fff; text-wrap:balance; }
+.hs-card__desc{ margin-top:10px; font-size:14.5px; line-height:1.55; color:rgba(219,230,255,.82); }
+
 .acc{ position:relative; margin-top:44px; }
 .acc__track{ display:flex; gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; padding:8px clamp(22px,5vw,56px) 12px; scrollbar-width:none; }
 .acc__track::-webkit-scrollbar{ display:none; }

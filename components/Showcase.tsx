@@ -1,8 +1,9 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { Terminal } from "@/components/ui/terminal";
 import { MacbookScroll } from "@/components/ui/macbook-scroll";
-import Carousel from "@/components/ui/carousel";
 
 /* ───────────────── METHOD · macbook scroll with our own screen ───────────────── */
 const RESULTS: { rank: number; name: string; formula: string; val: number; pct: number }[] = [
@@ -129,17 +130,63 @@ const SLIDES = [
 ];
 
 export function Research() {
+  const targetRef = useRef<HTMLElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start start", "end end"],
+  });
+  const [maxX, setMaxX] = useState(0);
+  const [tall, setTall] = useState(0);
+
+  useEffect(() => {
+    const calc = () => {
+      const track = trackRef.current;
+      if (!track) return;
+      const dist = Math.max(0, track.scrollWidth - window.innerWidth + 40);
+      setMaxX(dist);
+      setTall(dist + window.innerHeight);
+    };
+    // Wait for layout to settle so the card widths are final before measuring.
+    const id = requestAnimationFrame(() => requestAnimationFrame(calc));
+    window.addEventListener("resize", calc);
+    return () => {
+      cancelAnimationFrame(id);
+      window.removeEventListener("resize", calc);
+    };
+  }, []);
+
+  const x = useTransform(scrollYProgress, [0, 1], [0, -maxX]);
+
   return (
-    <section className="research" id="product">
-      <div className="container research__head">
-        <p className="label">03 · The research</p>
-        <h2 className="h2">A physics grounded learning stack.</h2>
-        <p className="lead">
-          Six ideas do the heavy lifting, from the physics written into the loss function to the
-          honest uncertainty on every prediction.
-        </p>
+    <section
+      ref={targetRef}
+      className="hs"
+      id="product"
+      style={tall ? { height: `${tall}px` } : undefined}
+    >
+      <div className="hs__pin">
+        <div className="container hs__head">
+          <p className="label">03 · The research</p>
+          <h2 className="h2">A physics grounded learning stack.</h2>
+          <p className="lead">Six ideas do the work. Keep scrolling to move across them.</p>
+        </div>
+        <motion.div ref={trackRef} style={{ x }} className="hs__track">
+          {SLIDES.map((s, i) => (
+            <article
+              className="hs-card"
+              key={s.title}
+              style={{ backgroundImage: `url(${s.src})` }}
+            >
+              <span className="hs-card__n">0{i + 1}</span>
+              <div className="hs-card__body">
+                <h3 className="hs-card__title">{s.title}</h3>
+                <p className="hs-card__desc">{s.description}</p>
+              </div>
+            </article>
+          ))}
+        </motion.div>
       </div>
-      <Carousel slides={SLIDES} />
     </section>
   );
 }
